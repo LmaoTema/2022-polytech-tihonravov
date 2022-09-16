@@ -3,7 +3,7 @@
 void print()
 {
 int main() {
-  std::cout << "hello world" << std::endl;
+  std::cout << "hello world,baby" << std::endl;
   return EXIT_SUCCESS;
 }
 }
