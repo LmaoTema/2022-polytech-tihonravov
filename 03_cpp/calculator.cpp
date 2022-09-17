@@ -21,6 +21,7 @@ int main()
         case '-': c = a - b; break;
         case '*': c = a * b; break;
         case '/': c = a / b; break;
+        case '^': c = a * b; break;
         default:
             printf("Неверно\n");
             continue;
