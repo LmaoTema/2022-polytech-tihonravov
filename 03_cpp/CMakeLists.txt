@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16 )
-project(Hello LANGUAGES C)
+project(Hello LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 14)
 
