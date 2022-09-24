@@ -1,7 +1,20 @@
 #include<iostream>
 #include<algorithm>
 using namespace std;
+int search(int arr[], int n, int x)
+{
+    for (int i = 0; i < n; ++i)
+    {
+        if (arr[i] == x)
+        {
+            return i;
+
+        }
+    }
+    return -1;  
+}
 int main()
+
 {
     
     
@@ -18,14 +31,14 @@ int main()
 
 
     int result = search(arr, n, x);
-    int(result == -1)
+    if (result == -1)
     {
-        cout << "Not find"
+        cout << "Not find";
     
     }
     else 
     {
-        cout << "find it"
+        cout << "find it" << result;
     }
     return 0;
 }
