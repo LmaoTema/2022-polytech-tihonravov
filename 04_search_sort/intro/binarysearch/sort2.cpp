@@ -51,7 +51,7 @@ int main()
         cout << "find it" << result;
     }
     unsigned int end_time = clock();
-     unsigned int search_time = end_time - start_time;
+    unsigned int search_time = end_time - start_time;
     cout << "runtime = " << search_time << endl;                  
     system("pause");
     return 0;
