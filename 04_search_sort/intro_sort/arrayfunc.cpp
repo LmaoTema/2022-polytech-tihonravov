@@ -16,7 +16,6 @@ void fill_array_random(int arr[], int n, int a, int b)
 
 void print_array(int arr[], int n, bool show_index = false)
 { 
-
     for (int i = 0; i < n; i++)
     cout << arr[i] << '\t';
     cout << '\n';
