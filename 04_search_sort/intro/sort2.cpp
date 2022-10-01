@@ -1,8 +1,11 @@
 #include<iostream>
 #include<algorithm>
+#include<ctime>
+
 using namespace std;
 int binary_search(int arr[], int l, int r, int x)
 {
+
     if (r >= 1 ) 
     {
         int mid = 1 + ( r - 1) / 2;
@@ -17,13 +20,13 @@ int binary_search(int arr[], int l, int r, int x)
         return binary_search(arr, mid + 1, r, x);
     
     }
-
     return -1;
  }
+
 int main()
 
 {
-    
+    unsigned int start_time =  clock()
     
     
     
@@ -36,7 +39,7 @@ int main()
     int x = 120;
     int n = sizeof(arr) / sizeof(arr[0]);
 
-
+    
     int result = binary_search(arr, 0, n - 1, x);
     if (result == -1)
     {
@@ -47,5 +50,9 @@ int main()
     {
         cout << "find it" << result;
     }
+    unsigned int end_time = clock();
+     unsigned int search_time = end_time - start_time;
+    cout << "runtime = " << search_time << endl;                  
+    system("pause");
     return 0;
 }
