@@ -2,9 +2,19 @@
 #include <chrono>
 #include <ratio>
 #include <thread>
-#include"rand_mass.cpp"
-using namespace std::chrono;
+using namespace std;
 
+void fill_array_random(int arr[], int n, int a, int b)
+{
+    std::random_device dev;
+    std::mt19937 rng(dev());
+    std::uniform_int_distribution<std::mt19937::result_type> dist(a,b);
+    
+    for(int i=0; i<n; ++i)
+    {
+        arr[i] = dist(rng);
+    }
+}
  void swap(int arr[], int idx_a, int idx_b)
 {
     {
@@ -92,20 +102,20 @@ int main()
     cout << "Введите количество элементов массива: ";
     cin >> size;
     int arr[size];
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int n = sizeof(arr) / sizeof(arr);
 
     fill_array_random(arr, n, 0, 100);
 
 
-    const auto tm = chrono::steady_clock::now();
-    quicksort(arr, size);
-    const auto dt = chrono::steady_clock::now() - tm;
-    cout << "Quick sort time: " << chrono::diration_cast<chrono::milliseconds>(dt).count() << " ms" << endl;
+    const auto tm = std::chrono::steady_clock::now();
+    quicksort(a, size);
+    const auto dt = std::chrono::steady_clock::now() - tm;
+    cout << "Quick sort time: " <<std::chrono::diration_cast<std::chrono::milliseconds>(dt).count() << " ms" << std::endl;
     
     
-    const auto tm = chrono::steady_clock::now();
+    const auto tm = std::chrono::steady_clock::now();
     selection_sort(arr, size);
-    const auto dt = chrono::steady_clock::now() - tm;
-    cout << "Selection sort time: " << chrono::diration_cast<chrono::milliseconds>(dt).count() << " ms" << endl;
+    const auto dt = std::chrono::steady_clock::now() - tm;
+    cout << "Selection sort time: " <<std::chrono::diration_cast<std::chrono::milliseconds>(dt).count() << " ms" << std::endl;
 }
 }
