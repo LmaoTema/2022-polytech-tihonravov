@@ -1,6 +1,18 @@
 #include<iostream>
+#include <chrono>
+#include <ratio>
+#include <thread>
 #include"rand_mass.cpp"
+using namespace std::chrono;
 
+ void swap(int arr[], int idx_a, int idx_b)
+{
+    {
+    int temp = arr[idx_a]; 
+    arr[idx_a] = arr[idx_b];
+    arr[idx_b] = temp; 
+    }
+}
 void quick_sort(int arr[], int start, int end)
 {
     if (start >= end)
@@ -49,11 +61,14 @@ int partition(int arr[], int start, int end)
 
     return pivotIndex;
 }
+  
 void selection_sort(int arr[], int size)
 {
+
     for (int i = 0; i < size - 1; i++)
     {
-        
+        // Find exatcly what we need 
+
         int min_index = i;
         for (int j = i + 1; j < size; j++)
         {
@@ -62,50 +77,35 @@ void selection_sort(int arr[], int size)
                 min_index = j;
             }
         }
-        
+        // Check if we need some swapps
         if (min_index != i)
         {
+            // suppport func 
             swap(arr, i, min_index);
         }
     }
 }
-   void swap(int arr[], int idx_a, int idx_b)
-{
-    {
-    int temp = arr[idx_a]; 
-    arr[idx_a] = arr[idx_b];
-    arr[idx_b] = temp; 
-    }
-}
-void selection_sort(int arr[], int size)
-{
-    // Проходим каждую позицию
-    for (int i = 0; i < size - 1; i++)
-    {
-        // Ищем подходящий элемент
-        int min_index = i;
-        for (int j = i + 1; j < size; j++)
-        {
-            if (arr[j] < arr[min_index])
-            {
-                min_index = j;
-            }
-        }
-        // Проверяем нужна ли перестановка
-        if (min_index != i)
-        {
-            // вспомогательная функция
-            swap(arr, i, min_index);
-        }
-    }
-}
-
-
 int main()
+{ 
 {
+    int size;
+    cout << "Введите количество элементов массива: ";
+    cin >> size;
+    int arr[size];
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    fill_array_random(arr, n, 0, 100);
 
 
-
-
-
+    const auto tm = chrono::steady_clock::now();
+    quicksort(arr, size);
+    const auto dt = chrono::steady_clock::now() - tm;
+    cout << "Quick sort time: " << chrono::diration_cast<chrono::milliseconds>(dt).count() << " ms" << endl;
+    
+    
+    const auto tm = chrono::steady_clock::now();
+    selection_sort(arr, size);
+    const auto dt = chrono::steady_clock::now() - tm;
+    cout << "Selection sort time: " << chrono::diration_cast<chrono::milliseconds>(dt).count() << " ms" << endl;
+}
 }
