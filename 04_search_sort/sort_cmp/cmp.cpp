@@ -1,20 +1,8 @@
 #include<iostream>
-#include <chrono>
-#include <ratio>
-#include <thread>
+#include <time.h>
+
 using namespace std;
 
-void fill_array_random(int arr[], int n, int a, int b)
-{
-    std::random_device dev;
-    std::mt19937 rng(dev());
-    std::uniform_int_distribution<std::mt19937::result_type> dist(a,b);
-    
-    for(int i=0; i<n; ++i)
-    {
-        arr[i] = dist(rng);
-    }
-}
  void swap(int arr[], int idx_a, int idx_b)
 {
     {
@@ -95,27 +83,44 @@ void selection_sort(int arr[], int size)
         }
     }
 }
+clock_t start;
+float timing;
 int main()
+
 { 
-{
     int size;
-    cout << "Введите количество элементов массива: ";
+    cout << "Enter array distance number: ";
     cin >> size;
-    int arr[size];
-    int n = sizeof(arr) / sizeof(arr);
-
-    fill_array_random(arr, n, 0, 100);
-
-
-    const auto tm = std::chrono::steady_clock::now();
-    quicksort(a, size);
-    const auto dt = std::chrono::steady_clock::now() - tm;
-    cout << "Quick sort time: " <<std::chrono::diration_cast<std::chrono::milliseconds>(dt).count() << " ms" << std::endl;
-    
-    
-    const auto tm = std::chrono::steady_clock::now();
+    srand(time(NULL));
+    int* a = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        a[i] = rand() % 300 -100;
+    }
+    start = clock();
+    quick_sort(arr, start);
+    cout << "Quick sort: ";
+    for (int i = 0; i < size; i++)
+    {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+    timing = (float)(clock() - start) / CLOCKS_PER_SEC;
+    cout << "Quick sort timing = " << timing;
+    cout << endl;
+     
+     
+    start = clock();
     selection_sort(arr, size);
-    const auto dt = std::chrono::steady_clock::now() - tm;
-    cout << "Selection sort time: " <<std::chrono::diration_cast<std::chrono::milliseconds>(dt).count() << " ms" << std::endl;
-}
+    cout << "Selection sort: ";
+    for (int i = 0; i < size; i++)
+    {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+    timing = (float)(clock() - start) / CLOCKS_PER_SEC;
+    cout << "Selection sort timing = " << timing;
+    cout << endl;
+     system("pause");
+    return 0;
 }
