@@ -1,4 +1,4 @@
-#include "func.h"
+#include "fuch.cpp"
 
 int main() 
 {
