@@ -3,4 +3,4 @@ project(linearsearch LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(lin.cpp linfunc.cpp)
+add_executable(linearsearch lin.cpp linfunc.cpp)
