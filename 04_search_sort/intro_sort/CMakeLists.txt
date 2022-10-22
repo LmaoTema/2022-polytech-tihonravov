@@ -3,4 +3,4 @@ project(arrayfunc LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(04_search_sort/intro_sort/arrayfunc.cpp)
+add_executable(arrayfunc arrayfunc.cpp)
