@@ -3,4 +3,4 @@ project(Mems LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(mems.cpp)
+add_executable(Mems mems.cpp)
