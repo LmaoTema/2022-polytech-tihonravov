@@ -6,9 +6,8 @@ unsigned int length(const char* str)
         return 0; 
     
     const char* end = str;
-    for ( ; *end != '\0'; ++end)
-
-        ;
+    for ( ; *end != '\0'; ++end);
+    
 
     return end - str;
                                     // Решение тут(решения тут не было)

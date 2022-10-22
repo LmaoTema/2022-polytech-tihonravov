@@ -1,5 +1,4 @@
 #include<iostream>
-#include<algorithm>
 #include<ctime>
 using namespace std;
 int search(int arr[], int n, int x)

@@ -6,7 +6,7 @@ using namespace std;
 int binary_search(int arr[], int l, int r, int x)
 {
 
-    if (r >= 1) 
+    if (r >= 1 ) 
     {
         int mid = 1 + ( r - 1) / 2;
 
