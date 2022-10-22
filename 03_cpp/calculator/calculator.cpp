@@ -8,10 +8,10 @@ int main()
     int p = 1;
     while (p != 2)
     {
-        printf("1 - calculator\n2 - exit\n");
+        cout << ("1 - calculator\n2 - exit\n"); cin >> fam;
         scanf("%d", &p);
         if (p != 1) break;
-        printf("Введите числа без пробелов: ");
+        cout << ("Введите числа без пробелов: "); cin >> fam;
         scanf("%lf%c%lf", &a,&d,&b);
         while(getchar() != '\n');
         switch(d)
@@ -19,12 +19,12 @@ int main()
         case '+': c = a + b; break;
         case '-': c = a - b; break;
         case '*': c = a * b; break;
-        case '/': c = a / b; break;
+        case '/': c = a / b; break; // при делени на ноль идёт возврат к началу,то есть к 11 строке.
         case '^': c = a * b; break;
         default:
-            printf("Неверно\n");
+            cout << ("Неверно\n"); cin >> fam;
             continue;
         }
-        printf("Результат = %lf\n", c);
+        cout << ("Результат = %lf\n", c); cin >> fam;
     }
 }
