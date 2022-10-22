@@ -3,4 +3,4 @@ project(CmpSorirovka LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(cmp.cpp)
+add_executable(CmpSorirovka cmp.cpp)
