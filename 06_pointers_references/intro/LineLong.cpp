@@ -7,10 +7,8 @@ unsigned int length(const char* str)
     
     const char* end = str;
     for ( ; *end != '\0'; ++end);
-    
 
     return end - str;
-                                    // Решение тут(решения тут не было)
 }
 
 int main()
