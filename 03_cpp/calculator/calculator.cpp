@@ -1,19 +1,17 @@
-#define _CRT_SECURE_NO_WARNINGS
+#include<cmath>
 #include <stdio.h>
-
+#include<iostream>
+using namespace ::std;
 int main()
 {
+
     double a, b, c;
     char d;
-    int p = 1;
-    while (p != 2)
+    while (true)
     {
-        cout << ("1 - calculator\n2 - exit\n"); cin >> fam;
-        scanf("%d", &p);
-        if (p != 1) break;
-        cout << ("Введите числа без пробелов: "); cin >> fam;
-        scanf("%lf%c%lf", &a,&d,&b);
-        while(getchar() != '\n');
+     
+        cout << "Введите числа без пробелов: " << endl; 
+        cin >> a >> c >> b;
         switch(d)
         {
         case '+': c = a + b; break;
@@ -22,9 +20,9 @@ int main()
         case '/': c = a / b; break; // при делени на ноль идёт возврат к началу,то есть к 11 строке.
         case '^': c = a * b; break;
         default:
-            cout << ("Неверно\n"); cin >> fam;
+            cout << "Неверно\n" << endl;
             continue;
         }
-        cout << ("Результат = %lf\n", c); cin >> fam;
+        cout << "Результат = ", c << endl;
     }
 }
