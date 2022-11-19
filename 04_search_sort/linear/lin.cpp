@@ -1,4 +1,5 @@
 #include"linfunc.cpp"
+#include<iostream>
 
 
 
