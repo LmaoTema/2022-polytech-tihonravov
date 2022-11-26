@@ -22,3 +22,4 @@ $$
 $$
 T(n) = {2}{}T(n/2) + n^2
 $$
+\usepackage{mathtools}
