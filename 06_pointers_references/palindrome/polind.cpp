@@ -16,9 +16,9 @@ bool palindrome_check(const char* s)
 int main()
 {
 	assert(palindrome_check("PiliP") == true);
-	assert(palindrome_check("ufo tofu") == true);
+	assert(palindrome_check("ufotofu") == true);
 	assert(palindrome_check("informatika") == false);
-	assert(palindrome_check("Civic") == true);
+	assert(palindrome_check("civic") == true);
 	assert(palindrome_check(" ") == true);
     assert(palindrome_check("Radiotecknika") == false);
 	return  0;
