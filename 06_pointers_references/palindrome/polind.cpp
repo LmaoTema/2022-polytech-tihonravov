@@ -1,23 +1,25 @@
-#include <iostream>
-#include <string.h>
-using namespace std;
- bool palindrom(char s[100]);
-int main()
-{   
-    char s[100];
-    cout << "ENter a line" << endl;
-    cin.getline(s, 100);
- if (palindrom(s))
-    cout << "Polindrome " << endl;
-else
-cout<<"Not a Polindrome"<<endl;
-    return 0;
+#include<cassert>
+#include<cstring>
+
+bool palindrome_check(const char* s)
+{
+	int k = 0;
+	int n = strlen(s) - 1;
+	for (int i = 0, k = n; i <= k; i++, k--)
+	{
+		if (s[i] != s[k])
+			return false;
+	}
+	return true;
 }
- bool palindrom(char s[])
-    {
-      int n = strlen(s);
- for (int i = 0;  i < n / 2; i++ ) // идёт проверка слов на полиндромность,кол-во проверок = длина на 2.
-if(s[i]!=s[n-1-i])
-return false;
-return true;
+
+int main()
+{
+	assert(palindrome_check("PiliP") == true);
+	assert(palindrome_check("ufo tofu") == true);
+	assert(palindrome_check("informatika") == false);
+	assert(palindrome_check("Civic") == true);
+	assert(palindrome_check(" ") == true);
+    assert(palindrome_check("Radiotecknika") == false);
+	return  0;
 }
