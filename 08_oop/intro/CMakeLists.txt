@@ -1,5 +1,7 @@
-cmake_minimum_required(VERSION 3.1...3.24)
+cmake_minimum_required(VERSION 3.16)
 
-project(Classes VERSION 1.0 LANGUAGES CXX)
+project(Classes)
 
-add_executable( String.h String.cpp Classes.cpp)
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable( Classes String.h String.cpp Classes.cpp)
