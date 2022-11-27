@@ -1,11 +1,11 @@
 #include <iostream>
 
-class String 
+
+class String
 {
 private:
-  unsigned int length;
-  char *data;
-
+  unsigned int length = 0;
+  char *in;
 public:
   String(const char *s);
   unsigned int get_length();
