@@ -45,8 +45,19 @@ struct list
         }
         cout << endl;
     }
+void push_forward(string _val)
 };
-
+{
+    Node* p = new Node(_val);
+    if (is_empty())
+    {
+      first = p;
+      last = p;
+      return;
+    }
+    first->next = p;
+    first = p;
+};
 int main() 
 {
     list l;
