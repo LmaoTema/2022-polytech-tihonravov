@@ -9,7 +9,7 @@ TA::ctor
 2
 5
 DefaultName 
-Pavel and Alexes
+Pavel Pilip and Alexe Chepinoga
 TA::dtor
 Student::dtor
 Teacher::dtor
@@ -26,7 +26,7 @@ Student::ctor
 TA::ctor
 2
 5
-Pavel and Alexes
+Pavel Pilip  and Alexe Chepinoga
 TA::dtor
 Student::dtor
 Teacher::dtor
