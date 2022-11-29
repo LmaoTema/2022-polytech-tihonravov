@@ -40,6 +40,7 @@ struct list
         Node* p = first;
         while (p)
         {
+            while (p !=  ' ');
             cout << p->val << "->";
             p = p->next;
         }
