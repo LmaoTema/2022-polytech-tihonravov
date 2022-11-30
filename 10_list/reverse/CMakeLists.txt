@@ -1,7 +1,11 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 
-project(Reverse_List
+project(Rev LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 
-add_executable( Reverse_List listrev.cpp)
+include(doctest.cmake)
+
+add_executable(Rev test_reverse.cpp)
+
+target_link_libraries(Reverse PRIVATE doctest)
