@@ -1,6 +1,7 @@
-cmake_minimum_required(VERSION 3.16)
-project(queue)
+cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
+project(queue LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
 
-set(CMAKE_CXX_STANDARD 14)
-
-add_executable( queue queue.cpp)
+include(doctest.cmake)
+add_executable(tests test_queue.cpp)
+target_link_libraries(tests PRIVATE doctest)
