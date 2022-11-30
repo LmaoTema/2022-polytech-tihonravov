@@ -1,7 +1,11 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 
-project(List VERSION 1.0 LANGUAGES CXX)
+project(Intro LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 
-add_executable(List List.cpp)
+include(doctest.cmake)
+
+add_executable(Intro test_list.cpp)
+
+target_link_libraries(Intro PRIVATE doctest)
