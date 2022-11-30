@@ -16,10 +16,3 @@ if(NOT doctest_POPULATED)
     add_library(doctest INTERFACE)
     target_include_directories(doctest INTERFACE ${doctest_SOURCE_DIR}/doctest)
 endif()
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
