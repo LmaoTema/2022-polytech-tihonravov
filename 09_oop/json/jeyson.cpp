@@ -2,12 +2,17 @@
 #include <sstream>
 #include <string>
 #include <unordered_map>
+
+
 using namespace std;
+
 
 struct BasicToken
 {
     string value;
 };
+    
+
 struct StringToken : public BasicToken
 {
     StringToken(string str)
@@ -15,6 +20,7 @@ struct StringToken : public BasicToken
         value = "\"" + str + "\"";
     }
 };
+
 
 struct NumToken : BasicToken
 {
@@ -25,6 +31,8 @@ struct NumToken : BasicToken
         value = "\"" + to_string(num) + "\"";
     }
 };
+
+
 struct BoolToken : BasicToken
 {
     BoolToken(bool bl)
@@ -32,11 +40,13 @@ struct BoolToken : BasicToken
         value = bl ? "\"true\"" : "\"false\"";
     }
 };
+
+
 struct ArrayToken : BasicToken
 {
     ArrayToken(initializer_list<BasicToken> arr)
     {
-        value = "[\n        "; //Пустые места, потому что табуляция почему-то делает отступ в 6 прбелов??????
+        value = "[\n        "; //Пустые места, потому что табуляция почему-то делает отступ в 6 побелов
         for (size_t i = 1; auto k : arr)
         {
             value.append(k.value);
@@ -49,6 +59,8 @@ struct ArrayToken : BasicToken
         value.append("\n    ]");
     }
 };
+
+
 struct Json 
 {
     unordered_map<string, BasicToken> tokens;
@@ -74,6 +86,8 @@ struct Json
         return out;
     }
 };
+
+
 int main()
 {
     Json json
